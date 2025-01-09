@@ -13,7 +13,7 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="bg-black text-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+      <nav className="bg-black text-white  relative w-full z-20 top-0 start-0 border-b border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <Image
@@ -107,6 +107,8 @@ function NavBar() {
           </div>
         </div>
       </nav>
+
+      
     </div>
   );
 }

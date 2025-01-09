@@ -1,0 +1,26 @@
+ /* Navbar spacing */
+.space {
+    height: 300px !important;  /* Adjust the height as needed */
+    position: relative;
+  }
+  
+  /* Skills section styling */
+  .skills-section {
+    padding: 2rem;
+  }
+  
+  .skills-section .grid {
+    gap: 2rem; /* Space between the grid items */
+  }
+  
+  .skills-section p {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .skills-section img {
+    width: 100%;
+    max-height: 300px; /* Adjust as necessary */
+    object-fit: contain;
+  }
+  
