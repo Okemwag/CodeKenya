@@ -1,8 +1,16 @@
+import NavBar from '@/app/components/NavBar'
 import React from 'react'
 
 function HomePage() {
   return (
-    <div>homepage</div>
+    <div>
+      <div className="navbar">
+        <NavBar />
+      </div>
+      <div className="skills-section">
+        
+      </div>
+    </div>
   )
 }
 
