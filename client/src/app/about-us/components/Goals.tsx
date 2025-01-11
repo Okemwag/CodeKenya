@@ -1,0 +1,168 @@
+import React from "react";
+
+import Image from "next/image";
+
+import {
+  FaHeart,
+  FaNewspaper,
+  FaStar,
+  FaGlobe,
+  FaClock,
+  FaBookmark,
+} from "react-icons/fa6";
+
+const Goals = () => {
+  return (
+    <div className="bg-[#b3b4bdff] py-[4rem]">
+      <div className="w-[90%] mx-auto">
+        <div className="flex flex-col md:flex-row  gap-[2rem] md:gap-[20rem] justify-between">
+          <div className="w-full md:w-[30%] space-y-6">
+            <h2 className="text-4xl leading-2">The Code Kenya Journey</h2>
+            <p>
+              Code Kenya is a Kenyan bootcamp that would bridge the gap between
+              academia and industry. It&apos;s aims to grow into a global
+              operation that will help students accelerate their careers while
+              exploring the world.{" "}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem]">
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryBlackColor text-white rounded-md p-[1rem]">
+                <FaHeart />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">First Arrivals</h3>
+                <p className="text-xs">
+                  The journey of innovation kicks off in 2025 as we welcome our
+                  first cohort.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryBlackColor text-white rounded-md p-[1rem]">
+                <FaNewspaper />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">Courses offered</h3>
+                <p className="text-xs">
+                  We offer courses like data, software, business, banking,
+                  design and marketing.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryRedColor text-white rounded-md p-[1rem]">
+                <FaStar />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">Life Connections</h3>
+                <p className="text-xs">
+                  We thrive on the close connections between students and
+                  mentors.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryRedColor text-white rounded-md p-[1rem]">
+                <FaGlobe />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">Go global</h3>
+                <p className="text-xs">
+                  Code Kenya intents to expand its reach, inspired by global
+                  successes.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryGreenColor text-white rounded-md p-[1rem]">
+                <FaClock />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">Thrive online</h3>
+                <p className="text-xs">
+                  We embraces innovation with remote and hybrid programs.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="bg-primaryGreenColor text-white rounded-md p-[1rem]">
+                <FaBookmark />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-semibold">Future investment</h3>
+                <p className="text-xs">
+                  A strategic future investment program, creating pathways for
+                  learners to thrive globally.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="my-[5rem]">
+          <h1 className="text-2xl text-center md:text-left">Our goals</h1>
+          <div className="my-[2rem] flex flex-col md:flex-row">
+            <div className="bg-our-goals-bg1 h-[12rem] rounded-t-lg md:rounded-l-lg text-white bg-center  bg-no-repeat flex items-end">
+              <p className="w-[50%] text-center mx-auto mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+            </div>
+
+            <div className="bg-our-goals-bg2 h-[12rem] text-black bg-center bg-no-repeat flex items-end">
+              <p className="w-[50%] text-center mx-auto mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+            </div>
+
+            <div className="bg-our-goals-bg3 h-[12rem] text-white bg-center  bg-no-repeat flex items-end">
+              <p className="w-[50%] text-center mx-auto mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+            </div>
+
+            <div className="bg-our-goals-bg4 h-[12rem] rounded-b-lg md:rounded-r-lg text-white bg-center bg-no-repeat flex items-end">
+              <p className="w-[50%] text-center mx-auto mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row py-[2rem] items-center justify-between">
+          <Image
+            src="/images/ongoing-img.png"
+            alt="Group testing virtual reality"
+            width={500}
+            height={500}
+            className="rounded-md"
+          />
+          <div className="space-y-5 w-full my-[2rem] md:w-[50%]">
+            <h2 className="text-xl text-center md:text-left">Our purpose</h2>
+            <div className="space-y-4"> 
+              <p className="text-sm">
+                Our focus has always been on creating authentic connections
+                within our community. We go to great lengths to get to know our
+                students, teachers, and partner companies, which we believe has
+                been instrumental to our success.
+              </p>
+              <p className="text-sm">
+                Our purpose is brought to life by a dedicated team that embodies
+                both the competence and cultural values essential to our
+                mission. Over the years, we&apos;ve prioritized building a collective
+                of driven individuals who not only excel in their fields but
+                also share a deep commitment to pushing boundaries and
+                delivering on our promise – to help people go further.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Goals;

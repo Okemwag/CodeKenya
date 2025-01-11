@@ -2,20 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  /* Base transitions for all buttons */
+  .btn_base {
+    @apply transition-all duration-300 relative overflow-hidden transform hover:scale-[1.02] active:scale-[0.98];
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* White Button */
+  .btn_white {
+    @apply btn_base border-2 border-white rounded-full bg-white px-8 py-3 text-primaryGreenColor
+    hover:bg-transparent hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]
+    before:absolute before:inset-0 before:bg-white/20 before:translate-x-[-150%] before:skew-x-[30deg]
+    hover:before:translate-x-[150%] before:transition-transform before:duration-700;
+  }
+
+  /* Green Buttons */
+  .btn_green {
+    @apply btn_base bg-primaryGreenColor rounded-full px-8 py-3 text-white
+    hover:shadow-[0_0_20px_rgba(0,255,0,0.3)] 
+    after:absolute after:inset-0 after:border-2 after:border-primaryGreenColor after:rounded-full
+    after:scale-[1.15] after:opacity-0 hover:after:scale-100 hover:after:opacity-100
+    after:transition-all after:duration-500;
+  }
+
+  .btn_green_rect {
+    @apply btn_base bg-primaryGreenColor rounded-lg px-8 py-3 text-white
+    hover:shadow-[0_0_20px_rgba(0,255,0,0.3)] 
+    after:absolute after:inset-0 after:border-2 after:border-primaryGreenColor after:rounded-full
+    after:scale-[1.15] after:opacity-0 hover:after:scale-100 hover:after:opacity-100
+    after:transition-all after:duration-500;
+  }
+
+  /* Black Button */
+  .btn_black {
+    @apply btn_base bg-primaryBlackColor rounded-full px-8 py-3 text-white
+    hover:bg-primaryBlackColor/90 hover:shadow-lg
+    before:absolute before:inset-0 before:border before:border-white/0
+    hover:before:border-white/20 before:rounded-full before:scale-75 hover:before:scale-100
+    before:transition-all before:duration-300;
+  }
+
+  /* Red Buttons */
+  .btn_red {
+    @apply btn_base bg-primaryRedColor rounded-md px-8 py-3 text-white 
+    hover:bg-primaryRedColor/90 hover:shadow-[0_0_20px_rgba(255,0,0,0.3)]
+    after:absolute after:inset-0 after:bg-gradient-to-r after:from-red-500/0 after:via-white/50 after:to-red-500/0
+    after:translate-x-[-200%] hover:after:translate-x-[200%] after:transition-transform after:duration-1000;
+  }
+
+  .btn_red_rounded {
+    @apply btn_base bg-primaryRedColor rounded-full px-8 py-3 text-white
+    hover:shadow-[0_0_20px_rgba(255,0,0,0.3)] 
+    after:absolute after:inset-0 after:border-2 after:border-primaryRedColor after:rounded-full
+    after:scale-[1.15] after:opacity-0 hover:after:scale-100 hover:after:opacity-100
+    after:transition-all after:duration-500;
+  }
+
+  /* Watch Demo Button */
+  .btn_watch_demo {
+    @apply btn_base px-8 py-3 rounded-full text-white text-sm
+    bg-[length:200%_100%] bg-right hover:bg-left
+    transition-[background-position,transform,shadow] duration-500
+    hover:shadow-[0_0_15px_rgba(0,255,0,0.2)]
+    flex items-center gap-2;
+  }
+
+  /* Optional: Add a play icon to watch demo button */
+  /* .btn_watch_demo::before {
+    content: "▶";
+    @apply inline-block mr-1 text-xs transition-transform duration-300;
+  } */
+
+  .btn_watch_demo:hover::before {
+    @apply transform translate-x-1;
+  }
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
 }
