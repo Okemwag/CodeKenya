@@ -1,6 +1,6 @@
 import logging
 import os
-from typing import Generator
+from typing import Generator, Type
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, event
@@ -17,11 +17,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Database configuration
-DB_USER = os.getenv("DB_USER", "Admin")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "mETSA2J8Ploit")
-DB_HOST = os.getenv("DB_HOST", "db")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "codekenya")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
 
 DATABASE_URL = (
     f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
@@ -43,8 +43,11 @@ SessionLocal = sessionmaker(
     autocommit=False, autoflush=False, bind=engine, expire_on_commit=False
 )
 
-Base = declarative_base()
+def get_base() -> Type:
+    """Utility function to get Base class."""
+    return declarative_base()
 
+Base = get_base()
 
 # Event listener for connect
 @event.listens_for(Engine, "connect")
@@ -62,7 +65,6 @@ def verify_database_connection() -> bool:
         logger.error(f"Database connection failed: {str(e)}")
         return False
 
-
 def get_db() -> Generator[Session, None, None]:
     """Dependency for getting database session."""
     db = SessionLocal()
@@ -74,19 +76,8 @@ def get_db() -> Generator[Session, None, None]:
     finally:
         db.close()
 
+# app/db/database.py
 
-# Initialize database tables
-def init_db() -> None:
-    """Initialize database tables."""
-    try:
-        Base.metadata.create_all(bind=engine)
-        logger.info("Database tables created successfully")
-    except Exception as e:
-        logger.error(f"Error creating database tables: {str(e)}")
-        raise
-
-
-# Healthcheck function
 def check_database_health() -> dict:
     """Check database health and return status."""
     try:

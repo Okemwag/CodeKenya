@@ -1,13 +1,11 @@
 from fastapi import FastAPI
-from app.db.database import check_database_health, init_db
+from app.db.database import check_database_health
+from app.api.application import app as application_router
 
-app = FastAPI()
+app = FastAPI ()
 
-
-@app.on_event("startup")
-async def startup_event():
-    init_db()
-
+# Include the application router
+app.include_router(application_router, prefix="/api", tags=["Applications"])
 
 @app.get("/health")
 def health_check():
