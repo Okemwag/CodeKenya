@@ -6,7 +6,8 @@ from app.api.routes import app as application_router
 app = FastAPI ()
 origins = [
     "http://localhost:3000",  
-    "http://127.0.0.1:3000",  
+    "http://127.0.0.1:3000",
+    "https://www.codekenya.org"  
 ]
 
 
