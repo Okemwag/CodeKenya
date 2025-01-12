@@ -2,22 +2,25 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const ApplicationForm: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    first_name: "",
+    last_name: "",
+    email_phone: "",
     dob: "",
     course_id: "",
-    university: "",
+    university_name: "",
     essay: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const totalSlides = 3;
+
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -31,25 +34,25 @@ const ApplicationForm: React.FC = () => {
     const newErrors: Record<string, string> = {};
 
     // First Name validation
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
-    } else if (formData.firstName.length < 2) {
-      newErrors.firstName = "First name must be at least 2 characters";
+    if (!formData.first_name.trim()) {
+      newErrors.first_name = "First name is required";
+    } else if (formData.first_name.length < 2) {
+      newErrors.first_name = "First name must be at least 2 characters";
     }
 
     // Last Name validation
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
-    } else if (formData.lastName.length < 2) {
-      newErrors.lastName = "Last name must be at least 2 characters";
+    if (!formData.last_name.trim()) {
+      newErrors.last_name = "Last name is required";
+    } else if (formData.last_name.length < 2) {
+      newErrors.last_name = "Last name must be at least 2 characters";
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+    if (!formData.email_phone.trim()) {
+      newErrors.email_phone = "Email is required";
+    } else if (!emailRegex.test(formData.email_phone)) {
+      newErrors.email_phone = "Please enter a valid email";
     }
 
     // Date of Birth validation
@@ -70,8 +73,8 @@ const ApplicationForm: React.FC = () => {
     }
 
     // University validation
-    if (!formData.university.trim()) {
-      newErrors.university = "University is required";
+    if (!formData.university_name.trim()) {
+      newErrors.university_name = "University is required";
     }
 
     // Essay validation
@@ -106,6 +109,8 @@ const ApplicationForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const base_url = process.env.NEXT_PUBLIC_BASE_API_URL;
+    // console.log("Api base url::", base_url);
     e.preventDefault();
     const newErrors = validateForm();
     setErrors(newErrors);
@@ -119,10 +124,16 @@ const ApplicationForm: React.FC = () => {
           course_id: parseInt(formData.course_id, 10),
         };
 
-        // const response = await axios.post("/api/application", submissionData);
-        // const data = response.data;
-        console.log("Form submitted:", submissionData);
-        alert("Form submitted successfully!");
+        const response = await axios.post(
+          `${base_url}/api/applications`,
+          submissionData
+        );
+        const data = response.data;
+        if (response.status === 200) {
+          router.push("/application-success-page");
+        }
+        console.log("Form submitted:", data);
+        // alert("Form submitted successfully!");
       } catch (error) {
         console.error("Submission error:", error);
         alert("An error occurred while submitting the form");
@@ -202,19 +213,19 @@ const ApplicationForm: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      name="firstName"
-                      value={formData.firstName}
+                      name="first_name"
+                      value={formData.first_name}
                       onChange={handleChange}
                       className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                        errors.firstName
+                        errors.first_name
                           ? "border-red-500 focus:ring-red-200"
                           : "border-gray-300 focus:ring-green-200"
                       }`}
                       placeholder="Enter your first name"
                     />
-                    {errors.firstName && (
+                    {errors.first_name && (
                       <span className="text-red-500 text-xs mt-1">
-                        {errors.firstName}
+                        {errors.first_name}
                       </span>
                     )}
                   </div>
@@ -225,42 +236,42 @@ const ApplicationForm: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      name="lastName"
-                      value={formData.lastName}
+                      name="last_name"
+                      value={formData.last_name}
                       onChange={handleChange}
                       className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                        errors.lastName
+                        errors.last_name
                           ? "border-red-500 focus:ring-red-200"
                           : "border-gray-300 focus:ring-green-200"
                       }`}
                       placeholder="Enter your last name"
                     />
-                    {errors.lastName && (
+                    {errors.last_name && (
                       <span className="text-red-500 text-xs mt-1">
-                        {errors.lastName}
+                        {errors.last_name}
                       </span>
                     )}
                   </div>
 
                   <div className="flex flex-col">
                     <label className="mb-1 text-sm font-medium text-gray-700">
-                      Email
+                      Email or Phone
                     </label>
                     <input
                       type="email"
-                      name="email"
-                      value={formData.email}
+                      name="email_phone"
+                      value={formData.email_phone}
                       onChange={handleChange}
                       className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                        errors.email
+                        errors.email_phone
                           ? "border-red-500 focus:ring-red-200"
                           : "border-gray-300 focus:ring-green-200"
                       }`}
-                      placeholder="Enter your email"
+                      placeholder="Enter your email or phone"
                     />
-                    {errors.email && (
+                    {errors.email_phone && (
                       <span className="text-red-500 text-xs mt-1">
-                        {errors.email}
+                        {errors.email_phone}
                       </span>
                     )}
                   </div>
@@ -318,19 +329,19 @@ const ApplicationForm: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      name="university"
-                      value={formData.university}
+                      name="university_name"
+                      value={formData.university_name}
                       onChange={handleChange}
                       className={`px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                        errors.university
+                        errors.university_name
                           ? "border-red-500 focus:ring-red-200"
                           : "border-gray-300 focus:ring-green-200"
                       }`}
                       placeholder="Enter your university"
                     />
-                    {errors.university && (
+                    {errors.university_name && (
                       <span className="text-red-500 text-xs mt-1">
-                        {errors.university}
+                        {errors.university_name}
                       </span>
                     )}
                   </div>

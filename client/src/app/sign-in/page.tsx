@@ -6,12 +6,13 @@ import React, { useState, useEffect } from "react";
 const ApplicationForm: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    first_name: "",
+    last_name: "",
+    email_phone: "",
     dob: "",
-    course: "",
-    university: "",
+    course_id: "",
+    university_name: "",
+    essay: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
