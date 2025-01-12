@@ -31,12 +31,12 @@ const SuccessPage = () => {
         transition={{ duration: 0.6 }}
         className="flex justify-center gap-4 mb-12"
       >
-        <Link 
+        {/* <Link 
           href="/dashboard" 
           className="px-6 py-3 text-base font-medium rounded-md text-white bg-primaryGreenColor hover:bg-green-700 transition-colors"
         >
           Go to Dashboard
-        </Link>
+        </Link> */}
         <Link 
           href="/" 
           className="px-6 py-3 text-base font-medium rounded-md text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 transition-colors"

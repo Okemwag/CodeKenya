@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import axios from "axios";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -13,7 +16,11 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
+import SubscriptionModal from "./SubscriptionModal";
+
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [showSubscribedPopup, setShowSubscribedPopup] = useState(false);
   const currentYear = new Date().getFullYear();
   const footerLinks = {
     general: {
@@ -64,8 +71,36 @@ const Footer = () => {
     "Website and student portal policy",
   ];
 
+  const subscribeHandler = async () => {
+    const base_url = process.env.NEXT_PUBLIC_BASE_API_URL;
+    // e.preventDefault();
+
+    try {
+      if (email) {
+        // console.log("Email provided::", email)
+        const response = await axios.post(`${base_url}/api/subscribe`, {
+          email,
+        });
+        if (response.status === 200) {
+          setShowSubscribedPopup(true);
+          setEmail("");
+          // alert("Subscribed!");
+        }
+      }
+    } catch (error) {
+      console.log("Subscription error::", error);
+      alert("An error occured when subscribing");
+    }
+  };
+
   return (
     <footer className="bg-primaryBlackColor text-white px-8 py-12">
+      {showSubscribedPopup && (
+        <SubscriptionModal
+          isOpen={showSubscribedPopup}
+          onClose={() => setShowSubscribedPopup(false)}
+        />
+      )}
       {/* Main footer content */}
       <div className="w-full md:w-[90%] mx-auto">
         {/* Logo and navigation links */}
@@ -111,10 +146,16 @@ const Footer = () => {
             <div className="flex">
               <input
                 type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email Address"
                 className="w-full px-4 py-2 rounded-l bg-gray-800 text-white"
               />
-              <button className="bg-white text-black px-6 py-2 rounded-r font-semibold">
+              <button
+                className="bg-white text-black px-6 py-2 rounded-r font-semibold"
+                onClick={subscribeHandler}
+              >
                 Subscribe
               </button>
             </div>
