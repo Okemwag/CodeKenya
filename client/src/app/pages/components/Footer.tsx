@@ -81,15 +81,16 @@ const Footer = () => {
         const response = await axios.post(`${base_url}/api/subscribe`, {
           email,
         });
+
         if (response.status === 200) {
           setShowSubscribedPopup(true);
           setEmail("");
-          // alert("Subscribed!");
         }
       }
     } catch (error) {
       console.log("Subscription error::", error);
-      alert("An error occured when subscribing");
+      alert("Please use a different email or try again later😥");
+      setEmail("");
     }
   };
 
