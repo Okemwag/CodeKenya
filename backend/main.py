@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.db.database import check_database_health
-from app.api.application import app as application_router
+from app.api.routes import app as application_router
 
 app = FastAPI ()
 

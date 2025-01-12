@@ -1,10 +1,12 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
-from passlib.hash import bcrypt
+from sqlalchemy.exc import IntegrityError
 from ..db.database import get_db
-from ..models.users import User, Applicant, Course, University
+from ..models.users import User, Applicant, Course, University, Subscriber
 from ..schemas.user import ApplicantCreate, ApplicantResponse
+from ..schemas.subscriber import SubscriberCreate, SubscriberResponse
 from ..utils.password import generate_secure_password
+from passlib.hash import bcrypt
 
 app = APIRouter()
 
@@ -64,3 +66,21 @@ def create_application(applicant: ApplicantCreate, db: Session = Depends(get_db)
     db.refresh(new_applicant)
 
     return new_applicant
+
+
+@app.post("/subscribe", response_model=SubscriberResponse)
+def create_subscriber(subscriber: SubscriberCreate, db: Session = Depends(get_db)):
+    """
+    Endpoint to create a new subscriber.
+    """
+    new_subscriber = Subscriber(email=subscriber.email)
+
+    try:
+        db.add(new_subscriber)
+        db.commit()
+        db.refresh(new_subscriber)
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(status_code=400, detail="Email already subscribed")
+
+    return new_subscriber

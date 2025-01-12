@@ -49,3 +49,11 @@ class Applicant(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
 
     user = relationship("User", back_populates="applicant")
+
+class Subscriber(Base):
+    __tablename__ = "subscribers"
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String(100), unique=True, index=True, nullable=False)
+    subscribed_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    
