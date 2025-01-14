@@ -1,13 +1,26 @@
 from fastapi import FastAPI
-from app.db.database import check_database_health, init_db
+from fastapi.middleware.cors import CORSMiddleware
+from app.db.database import check_database_health
+from app.api.routes import app as application_router
 
-app = FastAPI()
+app = FastAPI ()
+origins = [
+    "http://localhost:3000",  
+    "http://127.0.0.1:3000",
+    "https://www.codekenya.org"  
+]
 
 
-@app.on_event("startup")
-async def startup_event():
-    init_db()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 
+# Include the application router
+app.include_router(application_router, prefix="/api", tags=["Applications"])
 
 @app.get("/health")
 def health_check():

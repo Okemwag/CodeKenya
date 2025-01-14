@@ -88,7 +88,7 @@ const Footer = () => {
         }
       }
     } catch (error) {
-      console.log("Subscription error::", error);
+      //console.log("Subscription error::", error);
       alert("Please use a different email or try again later😥");
       setEmail("");
     }

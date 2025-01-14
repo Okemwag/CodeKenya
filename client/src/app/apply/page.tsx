@@ -136,7 +136,9 @@ const ApplicationForm: React.FC = () => {
         // alert("Form submitted successfully!");
       } catch (error) {
         console.error("Submission error:", error);
-        alert("An error occurred while submitting the form");
+        alert(
+          "Oopsie! an error may have occured on our end, please try again later or check your internet connection 😥"
+        );
       } finally {
         setIsSubmitting(false);
       }
