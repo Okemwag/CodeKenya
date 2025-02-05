@@ -1,12 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import Button from "../../components/Button";
+import VideoModal from "../../components/VideoModal";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const videoUrl = "https://www.youtube.com/watch?v=_xQgQBPQKMA";
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-primaryBlackColor h-full md:h-screen text-white">
       <Navbar />
@@ -60,11 +73,19 @@ const Hero = () => {
             className="flex w-full gap-3 lg:flex-row flex-col items-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                type="button"
-                title="Explore Programs"
-                variant="btn_white"
-              />
+              <Link
+                to="overview"
+                spy={true}
+                smooth={true}
+                duration={500}
+                // className="flexCenter gap-3 btn_learn_more"
+              >
+                <Button
+                  type="button"
+                  title="Explore Programs"
+                  variant="btn_white"
+                />
+              </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
@@ -72,6 +93,7 @@ const Hero = () => {
                 title="Watch Demo"
                 variant="btn_watch_demo"
                 icon="/icons/play.png"
+                onClick={openModal}
               />
             </motion.div>
           </motion.div>
@@ -102,6 +124,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+      {isModalOpen && <VideoModal videoUrl={videoUrl} onClose={closeModal} />}
     </div>
   );
 };

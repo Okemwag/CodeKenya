@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Image from "next/image"; // Importing Next.js Image component
 
@@ -66,7 +66,9 @@ function NavBar() {
 
           {/* Mobile menu toggle */}
           <div
-            className={`md:flex items-center justify-between hidden w-full md:w-auto md:order-1 ${isMobileMenuOpen ? 'block' : 'hidden'}`} // Show or hide nav items based on mobile menu state
+            className={`md:flex items-center justify-between hidden w-full md:w-auto md:order-1 ${
+              isMobileMenuOpen ? "block" : "hidden"
+            }`} // Show or hide nav items based on mobile menu state
             id="navbar-sticky"
           >
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black">
@@ -107,8 +109,6 @@ function NavBar() {
           </div>
         </div>
       </nav>
-
-      
     </div>
   );
 }

@@ -17,7 +17,9 @@ export default {
       },
       backgroundImage: {
         "how-CK-works-bg-img": "url('/images/CK-works-bg.png')",
-        "about-sect-hero-bg-img": "url('/images/about-sect-hero-bg.png')",
+        "about-sect-hero-bg-img": "url('/images/about-sect-hero-bg.jpg')",
+        "overview-bg-img1": "url('/images/overview1-bg.svg')",
+        "overview-bg-img2": "url('/images/overview2-bg.svg')",
         "our-goals-bg1": "url('/images/our-goals-img1.png')",
         "our-goals-bg2": "url('/images/our-goals-img2.png')",
         "our-goals-bg3": "url('/images/our-goals-img3.png')",

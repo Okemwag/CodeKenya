@@ -107,8 +107,8 @@ const Goals = () => {
         <div className="my-[5rem]">
           <h1 className="text-2xl text-center md:text-left">Our goals</h1>
           <div className="my-[2rem] flex flex-col md:flex-row">
-            <div className="bg-our-goals-bg1 h-[12rem] rounded-t-lg md:rounded-l-lg text-white bg-center  bg-no-repeat flex items-end">
-              <p className="w-[50%] text-center mx-auto mb-4">
+            <div className="bg-our-goals-bg1 h-[12rem]  md:rounded-l-lg text-white bg-center  bg-no-repeat flex items-end">
+              <p className="   text-center mx-auto mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
               </p>
             </div>
@@ -125,7 +125,7 @@ const Goals = () => {
               </p>
             </div>
 
-            <div className="bg-our-goals-bg4 h-[12rem] rounded-b-lg md:rounded-r-lg text-white bg-center bg-no-repeat flex items-end">
+            <div className="bg-our-goals-bg4 h-[12rem]  md:rounded-r-lg text-white bg-center bg-no-repeat flex items-end">
               <p className="w-[50%] text-center mx-auto mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
               </p>
@@ -134,15 +134,17 @@ const Goals = () => {
         </div>
         <div className="flex flex-col md:flex-row py-[2rem] items-center justify-between">
           <Image
-            src="/images/ongoing-img.png"
+            src="/images/our-purpose-img.jpg"
             alt="Group testing virtual reality"
             width={500}
             height={500}
             className="rounded-md"
+            loading="lazy"
+            quality={80}
           />
           <div className="space-y-5 w-full my-[2rem] md:w-[50%]">
             <h2 className="text-xl text-center md:text-left">Our purpose</h2>
-            <div className="space-y-4"> 
+            <div className="space-y-4">
               <p className="text-sm">
                 Our focus has always been on creating authentic connections
                 within our community. We go to great lengths to get to know our
@@ -152,10 +154,10 @@ const Goals = () => {
               <p className="text-sm">
                 Our purpose is brought to life by a dedicated team that embodies
                 both the competence and cultural values essential to our
-                mission. Over the years, we&apos;ve prioritized building a collective
-                of driven individuals who not only excel in their fields but
-                also share a deep commitment to pushing boundaries and
-                delivering on our promise – to help people go further.
+                mission. Over the years, we&apos;ve prioritized building a
+                collective of driven individuals who not only excel in their
+                fields but also share a deep commitment to pushing boundaries
+                and delivering on our promise – to help people go further.
               </p>
             </div>
           </div>

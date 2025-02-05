@@ -6,17 +6,19 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="bg-about-sect-hero-bg-img h-screen  bg-no-repeat bg-center">
+    <div className="bg-about-sect-hero-bg-img h-screen bg-cover bg-no-repeat bg-center">
       <Navbar />
       <div className="w-[90%] mx-auto flex items-start h-full">
-        <div className="w-full md:w-[30%] bg-gradient-to-b from-primaryRedColor to-transparent text-white rounded-lg mt-[4rem] space-y-6 p-7 shadow-lg">
+        <div className="w-full md:w-[30%] bg-gradient-to-b from-primaryBlackColor to-transparent text-white rounded-lg mt-[4rem] space-y-6 p-7 shadow-lg">
           <p>✦ About us</p>
           <h1 className="text-5xl font-bold">Who we are</h1>
           <p>
-            At Code Kenya we inspire and enable people to realize their
-            potential. We mentor them, encourage them, get behind them, and
-            believe in them, to stretch the limits of what they think they can
-            do.
+            codeKenya is a student organization that seeks to promote learning,
+            professional experience, adventure, cultural exchange, connection
+            building and impact in colleges around the world through a
+            distinctive, experiential 7-week summer program in SWE, Data
+            Science, Data Analytics, Entrepreneurship & other in-demand skills
+            that launch the careers of our clients.
           </p>
           <div>
             <Link href="/apply">
