@@ -1,5 +1,4 @@
 import React from "react";
-// import Image from "next/image";
 import Button from "../../components/Button";
 
 const Overview = () => {
@@ -27,12 +26,7 @@ const Overview = () => {
           </div>
         </div>
       </div>
-      {/* <Image
-        src="/images/overview-img.png"
-        alt="Program Overview"
-        height={500}
-        width={500}
-      /> */}
+
       <div className="flex flex-col md:flex-row justify-between gap-4 items-center">
         <div className="py-[4rem] px-[2rem] space-y-4 bg-overview-bg-img1  md:rounded-b-full text-white bg-center bg-no-repeat flex flex-col items-center justify-center">
           <h2 className="font-bold text-xl">Nairobi Kenya</h2>

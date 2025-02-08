@@ -116,7 +116,7 @@ const Hero = () => {
             }}
           >
             <Image
-              src="/images/hero-img.svg"
+              src="/images/home-hero-sect-img.svg"
               alt="Student"
               height={600}
               width={600}

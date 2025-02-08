@@ -106,28 +106,28 @@ const Goals = () => {
         </div>
         <div className="my-[5rem]">
           <h1 className="text-2xl text-center md:text-left">Our goals</h1>
-          <div className="my-[2rem] flex flex-col md:flex-row">
-            <div className="bg-our-goals-bg1 h-[12rem]  md:rounded-l-lg text-white bg-center  bg-no-repeat flex items-end">
-              <p className="   text-center mx-auto mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+          <div className="my-[2rem] flex flex-col md:flex-row items-stretch w-full">
+            <div className="bg-our-goals-bg1 h-[12rem] md:h-auto md:flex-1 md:rounded-l-lg text-white bg-center   bg-no-repeat flex items-end">
+              <p className="w-full text-center mx-auto mb-4 text-3xl">
+                Travel far
               </p>
             </div>
 
-            <div className="bg-our-goals-bg2 h-[12rem] text-black bg-center bg-no-repeat flex items-end">
-              <p className="w-[50%] text-center mx-auto mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+            <div className="bg-our-goals-bg2 h-[12rem]  md:flex-1 text-black bg-center  bg-no-repeat flex items-end">
+              <p className="w-full text-center mx-auto mb-4 text-3xl">
+                Learn deeply
               </p>
             </div>
 
-            <div className="bg-our-goals-bg3 h-[12rem] text-white bg-center  bg-no-repeat flex items-end">
-              <p className="w-[50%] text-center mx-auto mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+            <div className="bg-our-goals-bg3 h-[12rem]  md:flex-1 text-white bg-center  bg-no-repeat flex items-end">
+              <p className="w-full text-center mx-auto mb-4 text-3xl">
+                Connect widely
               </p>
             </div>
 
-            <div className="bg-our-goals-bg4 h-[12rem]  md:rounded-r-lg text-white bg-center bg-no-repeat flex items-end">
-              <p className="w-[50%] text-center mx-auto mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+            <div className="bg-our-goals-bg4 h-[12rem]  md:flex-1  md:rounded-r-lg text-white bg-center  bg-no-repeat flex items-end">
+              <p className="w-full text-center mx-auto mb-4 text-3xl">
+                Impact widely
               </p>
             </div>
           </div>
@@ -143,15 +143,15 @@ const Goals = () => {
             quality={80}
           />
           <div className="space-y-5 w-full my-[2rem] md:w-[50%]">
-            <h2 className="text-xl text-center md:text-left">Our purpose</h2>
+            <h2 className="text-3xl text-center md:text-left">Our purpose</h2>
             <div className="space-y-4">
-              <p className="text-sm">
+              <p className="text-lg">
                 Our focus has always been on creating authentic connections
                 within our community. We go to great lengths to get to know our
                 students, teachers, and partner companies, which we believe has
                 been instrumental to our success.
               </p>
-              <p className="text-sm">
+              <p className="text-lg">
                 Our purpose is brought to life by a dedicated team that embodies
                 both the competence and cultural values essential to our
                 mission. Over the years, we&apos;ve prioritized building a
