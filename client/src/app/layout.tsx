@@ -17,7 +17,9 @@ export default function RootLayout({
       lang="en"
       className={`${lato.variable} ${poppins.variable} antialiased`}
     >
-      <body className={`${lato.className}`}>{children}</body>
+      <body suppressHydrationWarning className={`${lato.className}`}>
+        <div suppressHydrationWarning>{children}</div>
+      </body>
     </html>
   );
 }
