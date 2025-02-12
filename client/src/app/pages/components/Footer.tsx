@@ -27,7 +27,7 @@ const Footer = () => {
       title: "General",
       links: [
         { name: "Internships", path: "/internships" },
-        { name: "Tuition and financial aid", path: "/" },
+        { name: "Tuition and financial aid", path: "/tuition" },
         { name: "Health and safety", path: "/" },
         { name: "FAQs", path: "/" },
         { name: "Contact us", path: "/contact" },

@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../../components/Button";
 
+import Link from "next/link";
+
 const Overview = () => {
   return (
     <div
@@ -18,11 +20,13 @@ const Overview = () => {
             Regular 1 deadline: February 14th 2025.
           </p>
           <div className="flex justify-center md:justify-start">
-            <Button
-              type="button"
-              title="Explore tuition & financial aid"
-              variant="btn_green_rect"
-            />
+            <Link href="/tuition">
+              <Button
+                type="button"
+                title="Explore tuition & financial aid"
+                variant="btn_green_rect"
+              />
+            </Link>
           </div>
         </div>
       </div>
@@ -33,14 +37,18 @@ const Overview = () => {
           <p className="text-sm">Applications are now open</p>
           <p className="text-xs">Starts from</p>
           <p>June 15th to August 1st</p>
-          <Button type="button" title="Learn more" variant="btn_green_rect" />
+          <Link href="/bootcamps">
+            <Button type="button" title="Learn more" variant="btn_green_rect" />
+          </Link>
         </div>
         <div className="py-[4rem] px-[2rem] space-y-4 bg-overview-bg-img2  md:rounded-b-full text-white bg-center bg-no-repeat flex flex-col items-center justify-center">
           <h2 className="font-bold text-xl">Online Program</h2>
           <p className="text-sm">Applications are now open</p>
           <p className="text-xs">Starts from</p>
           <p> May 13th to July 20th.</p>
-          <Button type="button" title="Learn more" variant="btn_green_rect" />
+          <Link href="/bootcamps">
+            <Button type="button" title="Learn more" variant="btn_green_rect" />
+          </Link>
         </div>
       </div>
     </div>
