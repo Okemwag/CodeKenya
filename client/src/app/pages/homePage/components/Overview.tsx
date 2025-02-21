@@ -17,7 +17,7 @@ const Overview = () => {
             including priority access and premium perks.
           </p>
           <p className="font-semibold">
-            Regular 1 deadline: February 14th 2025.
+            Regular 1 deadline: April 1st 2025.
           </p>
           <div className="flex justify-center md:justify-start">
             <Link href="/tuition">

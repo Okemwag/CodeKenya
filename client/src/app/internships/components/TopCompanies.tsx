@@ -2,7 +2,19 @@ import React from "react";
 
 import { FaMapPin } from "react-icons/fa6";
 
-const CompanyCard = ({ companyName, location, openPositions, isFeatured }) => {
+interface CompanyCardProps {
+  companyName: string;
+  location: string;
+  openPositions: number;
+  isFeatured: boolean;
+}
+
+const CompanyCard = ({
+  companyName,
+  location,
+  openPositions,
+  isFeatured,
+}: CompanyCardProps) => {
   return (
     <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
       <div className="flex items-start gap-3">
@@ -49,39 +61,39 @@ const CompanyCard = ({ companyName, location, openPositions, isFeatured }) => {
 const TopCompanies = () => {
   const companies = [
     {
-      companyName: "Dribbble",
+      companyName: "Google Inc.",
       location: "Nairobi, Kenya",
       openPositions: 3,
       isFeatured: true,
     },
     {
-      companyName: "Dribbble",
+      companyName: "Microsoft Inc.",
+      location: "Nairobi, Kenya",
+      openPositions: 1,
+      isFeatured: true,
+    },
+    {
+      companyName: "Safaricom PLC",
+      location: "Nairobi, Kenya",
+      openPositions: 4,
+      isFeatured: true,
+    },
+    {
+      companyName: "Little Cab",
+      location: "Nairobi, Kenya",
+      openPositions: 2,
+      isFeatured: true,
+    },
+    {
+      companyName: "Bolt",
       location: "Nairobi, Kenya",
       openPositions: 3,
       isFeatured: true,
     },
     {
-      companyName: "Dribbble",
+      companyName: "Zeraki",
       location: "Nairobi, Kenya",
-      openPositions: 3,
-      isFeatured: true,
-    },
-    {
-      companyName: "Dribbble",
-      location: "Nairobi, Kenya",
-      openPositions: 3,
-      isFeatured: true,
-    },
-    {
-      companyName: "Dribbble",
-      location: "Nairobi, Kenya",
-      openPositions: 3,
-      isFeatured: true,
-    },
-    {
-      companyName: "Dribbble",
-      location: "Nairobi, Kenya",
-      openPositions: 3,
+      openPositions: 1,
       isFeatured: true,
     },
   ];

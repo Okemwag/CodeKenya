@@ -9,16 +9,16 @@ const InternshipsSect = () => {
     {
       id: 1,
       name: "Kevin Limo",
-      role: "Data Science Intern",
+      role: "Software Engineering Intern",
       type: "Intern",
-      image: "/images/data-science-intern.png",
+      image: "/images/SE-intern.png",
     },
     {
       id: 2,
       name: "Sylvia Muli",
-      role: "Investment banking",
+      role: "Artificial Intelligence Intern",
       type: "Student",
-      image: "/images/investment-banking-intern.png",
+      image: "/images/AI-intern.png",
     },
   ];
 
@@ -73,8 +73,9 @@ const InternshipsSect = () => {
       <div className="flex flex-col md:flex-row justify-between w-[90%] mx-auto">
         <div className="w-full md:max-w-[30%] space-y-6">
           <Image
-            src="/images/internship-takeaways-img.png"
+            src="/images/internship-project-img.jpg"
             alt="Internship video"
+            className="rounded-lg"
             height={400}
             width={400}
           />

@@ -9,11 +9,11 @@ const Impact = () => {
         Our Impact
       </h1>
       <Image
-        src="/images/bootcamp.png"
+        src="/images/ongoing-bootcamps-img.jpg"
         alt="Learners in a bootcamp session"
-        className="my-[3rem] mx-auto"
-        height={1000}
-        width={1000}
+        className="my-[3rem] mx-auto rounded-lg border border-black border-[4px]"
+        height={800}
+        width={800}
       />
     </div>
   );

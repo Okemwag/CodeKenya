@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 
@@ -10,24 +10,24 @@ const TeamCarousel = () => {
 
   const teamMembers = [
     {
-      name: "Joan Ngoya",
+      name: "Raydon Muregi",
       role: "CEO",
-      image: '/images/CEO-img.jpg'
+      image: "/images/CEO-img.jpg",
     },
     {
-      name: "Sylvia Moraa",
-      role: "COO",
-      image: '/images/COO-img.jpg'
+      name: "Kendi Miriti",
+      role: "Director",
+      image: "/images/success-story-kendi.jpg",
     },
     {
-      name: "Joel Kiplagat",
-      role: "Tech lead",
-      image: '/images/tech-lead-img.jpg'
+      name: "Valary Anguzuzu",
+      role: "Director",
+      image: "/images/Director2-img.png",
     },
     {
-      name: "Judith Njeri",
-      role: "Head of UX",
-      image: '/images/head-ux-img.jpg'
+      name: "Gabriel Okemwa",
+      role: "Head of Engineering",
+      image: "/images/Okemwa-profile.jpg",
     },
   ];
 

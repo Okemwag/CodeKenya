@@ -35,56 +35,62 @@ const AlumniProfile = () => {
   const alumni = [
     {
       id: 1,
-      name: "Brian Omondi",
-      role: "Data Scientist",
-      image: "/images/testimonial-img-1.png",
+      name: "Gabriel Okemwa",
+      role: "Software Engineer",
+      image: "/images/Okemwa-profile.jpg",
       testimonial:
         "Code Kenya is an amazing opportunity to meet new people, enjoy life in a new area of the world, learn and develop new skills, and try your hand in an industry you did not think you would have the chance to work in.",
       career: [
         {
           name: "Code Kenya",
-          role: "Data Science",
-          duration: "2022 - 2022",
+          role: "Lead Software Engineer",
+          duration: "2024 - present",
           location: "Nairobi, Kenya",
         },
         {
-          name: "Microsoft",
-          role: "Data Science Intern",
-          duration: "2022 - 2023",
-          location: "Nairobi, Kenya",
-        },
-        {
-          name: "Google",
-          role: "Machine Learning",
+          name: "Authelio",
+          role: "Software Engineer",
           duration: "2023 - 2024",
-          location: "Remote",
-        },
-        {
-          name: "Wells Fargo",
-          role: "Risk Analyst",
-          duration: "2024 - Present",
           location: "Nairobi, Kenya",
         },
+        {
+          name: "Apextech",
+          role: "Software Engineer", 
+          duration: "2021 - 2023",
+          location: "Nairobi, Kenya",
+        },  
       ],
     },
     {
       id: 2,
-      name: "Sarah Kamau",
+      name: "Caleb Kiprono",
       role: "Software Engineer",
-      image: "/images/testimonial-img-2.png",
+      image: "/images/Caleb-profile.jpg",
       testimonial:
         "The program provided me with invaluable hands-on experience and mentorship that helped launch my career in tech.",
       career: [
         {
-          name: "Code Kenya",
-          role: "Software Engineering",
-          duration: "2022 - 2022",
-          location: "Nairobi, Kenya",
+          name: "Duke Office of Information Technology",
+          role: "Audio Visual Assistant",
+          duration: "2022 - present",
+          location: "United States",
         },
         {
-          name: "Amazon",
+          name: "Meta",
           role: "Software Engineer Intern",
-          duration: "2022 - 2023",
+          duration: "2024 - 2024",
+          location: "Seattle, Washington, United States",
+        },
+        {
+          name: "Duke University Code+ Program",
+          role: "Software Engineer Intern",
+          duration: "2023 - 2023",
+          location: "United States",
+        },
+        {
+          name: "Equity Bank Limited",
+          role: "Relationship Officer",
+          duration: "2020 - 2020",
           location: "Nairobi, Kenya",
         },
       ],
@@ -138,7 +144,7 @@ const AlumniProfile = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-full my-[3rem] w-full md:w-[90%] mx-auto bg-gradient-to-br from-primaryBlackColor via-primaryBlackColor to-primaryGreenColor">
+    <div className="w-full min-h-full my-[3rem] w-full md:w-[90%] mx-auto bg-primaryBlackColor">
       <div className="max-w-6xl mx-auto p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Side - Carousel */}

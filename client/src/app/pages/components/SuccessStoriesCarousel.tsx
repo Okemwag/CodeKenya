@@ -9,25 +9,25 @@ const SuccessStoriesCarousel = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Brenda Wanjiku",
-      role: "Software Developer Intern",
-      image: "/images/testimonial-img-1.png",
+      name: "Francis Iboko Eyanae",
+      role: "Northwestern University",
+      image: "/images/success-story-francis.jpg",
       testimonial:
         "Joining the work experience support program at Code Kenya was a game-changer for my career. I gained practical skills, valuable mentorship, and the confidence to tackle real-world challenges. The support I received helped me transition smoothly into the professional world.",
     },
     {
       id: 2,
-      name: "John Doe",
-      role: "Full Stack Developer",
-      image: "/images/testimonial-img-2.png",
+      name: "Godwin Kangor",
+      role: "Dartmouth College",
+      image: "/images/success-story-godwin.jpg",
       testimonial:
         "The program provided me with invaluable hands-on experience and mentorship that helped launch my career in tech.",
     },
     {
       id: 3,
-      name: "Jane Smith",
-      role: "Frontend Developer",
-      image: "/images/testimonial-img-3.png",
+      name: "Kendi Miriti",
+      role: "Duke Kunshan University",
+      image: "/images/success-story-kendi.jpg",
       testimonial:
         "Thanks to the comprehensive training and support, I was able to land my dream job in web development.",
     },

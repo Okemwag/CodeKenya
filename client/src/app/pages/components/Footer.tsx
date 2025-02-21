@@ -7,8 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {
-  FaFacebook,
-  FaXTwitter,
   FaYoutube,
   FaLinkedin,
   FaMedium,
@@ -27,8 +25,7 @@ const Footer = () => {
       title: "General",
       links: [
         { name: "Internships", path: "/internships" },
-        { name: "Tuition and financial aid", path: "/tuition" },
-        { name: "Health and safety", path: "/" },
+        { name: "Tuition", path: "/tuition" },
         { name: "FAQs", path: "/" },
         { name: "Contact us", path: "/contact" },
       ],
@@ -36,40 +33,25 @@ const Footer = () => {
     bootcamps: {
       title: "Bootcamps",
       links: [
-        { name: "Management Consulting", path: "/" },
-        { name: "Data Science", path: "/" },
-        { name: "Investment Banking", path: "/" },
-        { name: "Digital Marketing", path: "/" },
-        { name: "Software Development", path: "/" },
+        { name: "Software Engineering", path: "/" },
+        { name: "Entrepreneurship", path: "/" },
+        { name: "Our SWE with AI", path: "/" },
       ],
     },
     resources: {
       title: "Resources",
-      links: [
-        { name: "Teach with Code Kenya", path: "/" },
-        { name: "Code Kenya Blog", path: "/blog" },
-        { name: "Developers", path: "/" },
-        { name: "Support", path: "/" },
-      ],
+      links: [{ name: "Code Kenya Blog", path: "/blog" }],
     },
     about: {
       title: "About",
       links: [
-        { name: "Information for parents", path: "/" },
         { name: "Who we are", path: "/about-us" },
-        { name: "Careers", path: "/" },
         { name: "Internship partners", path: "/internships" },
       ],
     },
   };
 
-  const legalLinks = [
-    "Privacy Policy",
-    "Terms of Use",
-    "Deposit policy",
-    "Legal",
-    "Website and student portal policy",
-  ];
+  const legalLinks = [{ name: "Deposit policy", path: "/tuition" }];
 
   const subscribeHandler = async () => {
     const base_url = process.env.NEXT_PUBLIC_BASE_API_URL;
@@ -162,25 +144,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="">
-              <FaFacebook />
-            </Link>
-            <Link href="">
-              <FaXTwitter />
-            </Link>
-            <Link href="">
+            <Link href="https://youtube.com/@codekenya-h1v?si=cCMZ-nFJU25NymhN">
               <FaYoutube />
             </Link>
-            <Link href="">
+            <Link href="https://www.linkedin.com/company/codekenya/">
               <FaLinkedin />
             </Link>
-            <Link href="">
+            <Link href="https://medium.com/@raydon.mbehero">
               <FaMedium />
             </Link>
-            <Link href="">
+            <Link href="https://www.instagram.com/codekenya2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
               <FaInstagram />
             </Link>
-            <Link href="">
+            <Link href="https://github.com/muregii/codeKenya">
               <FaGithub />
             </Link>
           </div>
@@ -190,8 +166,8 @@ const Footer = () => {
         <div className="text-center text-sm text-gray-400">
           <div className="flex flex-wrap justify-center gap-4 mb-4">
             {legalLinks.map((link) => (
-              <a key={link} href="#" className="hover:text-white">
-                {link}
+              <a key={link.name} href={link.path} className="hover:text-white">
+                {link.name}
               </a>
             ))}
           </div>

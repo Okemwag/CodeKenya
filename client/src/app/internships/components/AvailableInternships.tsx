@@ -3,8 +3,22 @@ import React from "react";
 import Image from "next/image";
 import { FaArrowRight, FaBookmark, FaMapPin } from "react-icons/fa6";
 
-const JobCard = ({ title, company, location, employmentType, salary }) => {
-  const typeColorMap = {
+interface JobCardProps {
+  title: string;
+  company: string;
+  location: string;
+  employmentType: string;
+  salary: string;
+}
+
+const JobCard = ({
+  title,
+  company,
+  location,
+  employmentType,
+  salary,
+}: JobCardProps) => {
+  const typeColorMap: { [key: string]: string } = {
     "FULL-TIME": "bg-green-100 text-green-800",
     "PART-TIME": "bg-blue-100 text-blue-800",
     INTERNSHIP: "bg-purple-100 text-purple-800",
@@ -56,88 +70,88 @@ const JobCard = ({ title, company, location, employmentType, salary }) => {
 const AvailableInternships = () => {
   const jobs = [
     {
-      title: "Technical Support Specialist",
+      title: "Software Engineering Intern",
       company: "Google Inc.",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Senior UX Designer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "KodaSchool",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Marketing Officer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Assistive Math",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Junior Graphic Designer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Uber",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Interaction Designer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Zeraki",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Project Manager",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "AWS",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Software Engineer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Little cab",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Visual Designer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Microsoft.",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Project Manager",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Safaricom PLC",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Front End Developer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "Oracle",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Senior UX Designer",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "MarketForce",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
-      title: "Marketing Manager",
-      company: "Google Inc.",
+      title: "Software Engineering Intern",
+      company: "IBM",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "$20,000 - $25,000",
+      salary: "Ksh.20,000 - Ksh.25,000",
     },
   ];
   return (

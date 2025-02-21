@@ -19,7 +19,7 @@ const Discover = () => {
             </h2>
             <p className="text-lg">
               We are thrilled to offer our students a unique chance to
-              experience the vibrant charm and iconic landmarks of Nairobi City.
+              experience the vibrant charm and iconic landmarks of Nairobi City and Kenya at large.
             </p>
             <div className="flex justify-center md:justify-start">
               <Link href='/apply'>
@@ -34,20 +34,20 @@ const Discover = () => {
             width={500}
           />
         </div>
-        <Image
+        {/* <Image
           src="/images/discover-cards.png"
           alt="Information cards"
           className="py-[3rem] pl-[3rem] md:block hidden"
           height={700}
           width={700}
-        />
+        /> */}
       </div>
       <Image
         src="/images/discover-images-right.png"
         alt="Places to visit in Nairobi"
         className="md:block hidden"
-        height={150}
-        width={150}
+        height={200}
+        width={200}
       />
     </div>
   );
