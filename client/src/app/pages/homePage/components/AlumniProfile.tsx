@@ -4,7 +4,14 @@ import React, { useState, useEffect } from "react";
 
 import Image from "next/image";
 
-const CareerTimeline = ({ companies }) => {
+interface Company {
+  name: string;
+  role: string;
+  duration: string;
+  location: string;
+}
+
+const CareerTimeline = ({ companies }: { companies: Company[] }) => {
   return (
     <div className="space-y-6">
       {companies.map((company, index) => (
@@ -30,7 +37,7 @@ const CareerTimeline = ({ companies }) => {
 const AlumniProfile = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState("next");
+  const [, setDirection] = useState("next");
 
   const alumni = [
     {

@@ -73,7 +73,7 @@ const InternshipsSect = () => {
       <div className="flex flex-col md:flex-row justify-between w-[90%] mx-auto">
         <div className="w-full md:max-w-[30%] space-y-6">
           <Image
-            src="/images/internship-project-img.jpg"
+            src="/images/internship-project-img.JPG"
             alt="Internship video"
             className="rounded-lg"
             height={400}
