@@ -43,9 +43,7 @@ const InternshipsFooter = () => {
     },
   };
 
-  const legalLinks = [
-    { name: "Deposit policy", path: "/tuition" },
-  ];
+  const legalLinks = [{ name: "Deposit policy", path: "/tuition" }];
 
   return (
     <footer className="bg-primaryBlackColor text-white">
@@ -139,19 +137,28 @@ const InternshipsFooter = () => {
             </div>
           </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
-          <Link href="https://youtube.com/@codekenya-h1v?si=cCMZ-nFJU25NymhN">
+            <Link
+              href="https://youtube.com/@codekenya-h1v?si=cCMZ-nFJU25NymhN"
+              target="_blank"
+            >
               <FaYoutube />
             </Link>
-            <Link href="https://www.linkedin.com/company/codekenya/">
+            <Link
+              href="https://www.linkedin.com/company/codekenya/"
+              target="_blank"
+            >
               <FaLinkedin />
             </Link>
-            <Link href="https://medium.com/@raydon.mbehero">
+            <Link href="https://medium.com/@raydon.mbehero" target="_blank">
               <FaMedium />
             </Link>
-            <Link href="https://www.instagram.com/codekenya2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <Link
+              href="https://www.instagram.com/codekenya2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+            >
               <FaInstagram />
             </Link>
-            <Link href="https://github.com/muregii/codeKenya">
+            <Link href="https://github.com/muregii/codeKenya" target="_blank">
               <FaGithub />
             </Link>
           </div>
