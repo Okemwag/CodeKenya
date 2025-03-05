@@ -8,7 +8,6 @@ interface JobCardProps {
   company: string;
   location: string;
   employmentType: string;
-  salary: string;
 }
 
 const JobCard = ({
@@ -16,7 +15,6 @@ const JobCard = ({
   company,
   location,
   employmentType,
-  salary,
 }: JobCardProps) => {
   const typeColorMap: { [key: string]: string } = {
     "FULL-TIME": "bg-green-100 text-green-800",
@@ -60,7 +58,7 @@ const JobCard = ({
           >
             {employmentType}
           </span>
-          <span className="text-sm text-gray-600">Salary: {salary}</span>
+          {/* <span className="text-sm text-gray-600">Salary: {salary}</span> */}
         </div>
       </div>
     </div>
@@ -74,84 +72,72 @@ const AvailableInternships = () => {
       company: "Google Inc.",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "KodaSchool",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Assistive Math",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Uber",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Zeraki",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "AWS",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Little cab",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Microsoft.",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Safaricom PLC",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "Oracle",
       location: "Nairobi, Kenya",
       employmentType: "PART-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "MarketForce",
       location: "Nairobi, Kenya",
       employmentType: "FULL-TIME",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
     {
       title: "Software Engineering Intern",
       company: "IBM",
       location: "Nairobi, Kenya",
       employmentType: "INTERNSHIP",
-      salary: "Ksh.20,000 - Ksh.25,000",
     },
   ];
   return (
