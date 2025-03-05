@@ -316,7 +316,7 @@ const ApplicationForm: React.FC = () => {
                     >
                       <option value="">Select a course</option>
                       <option value="1">Software Engineering</option>
-                      <option value="2">Entreprenureship</option>
+                      <option value="2">Entrepreneurship</option>
                     </select>
                     {errors.course_id && (
                       <span className="text-red-500 text-xs mt-1">

@@ -77,10 +77,10 @@ const AlumniProfile = () => {
         "The program provided me with invaluable hands-on experience and mentorship that helped launch my career in tech.",
       career: [
         {
-          name: "Duke Office of Information Technology",
-          role: "Audio Visual Assistant",
-          duration: "2022 - present",
-          location: "United States",
+          name: "Meta",
+          role: "Software Engineer",
+          duration: "2025 - present",
+          location: "Seattle, Washington, United States",
         },
         {
           name: "Meta",

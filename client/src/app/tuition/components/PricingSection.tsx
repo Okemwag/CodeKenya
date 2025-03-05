@@ -76,10 +76,10 @@ const PricingSection = () => {
       title: "Buy Now, Pay Later",
       planThemeColor: "primaryGreenColor",
       checkIconColor: "#006600ff",
-      price: 700,
+      price: 7000,
       iconBgColor: "bg-[#e1ede1ff]",
       textColor: "text-primaryGreenColor",
-      cycle: "month",
+      cycle: "",
       description:
         "Start learning now and pay over time, with flexible repayment terms.",
       buttonColor: "bg-primaryGreenColor",
