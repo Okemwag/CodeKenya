@@ -108,9 +108,8 @@ const PricingSection = () => {
                 </div>
               </div>
             )}
-
+            
             {/* Header */}
-
             <div className="flex justify-between flex-col items-start mb-4">
               <p
                 className={`${plan.iconBgColor || ""} ${
