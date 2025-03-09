@@ -26,26 +26,22 @@ interface PricingPlan {
 const PricingSection = () => {
   const plans: PricingPlan[] = [
     {
-      title: "Flexible Installments",
+      title: "Free",
       planThemeColor: "primaryBlackColor",
       checkIconColor: "#000000ff",
-      price: 285,
-      cycle: "month",
+      price: 0,
+      cycle: "",
       iconBgColor: "bg-[#e0e0e0ff]",
       textColor: "text-primaryBlackColor",
       description:
-        "Spread your tuition fees in monthly installments, customized to suit your schedule.",
+        "Enjoy full access to the course at no cost, with a flexible learning schedule designed for your convenience.",
       buttonColor: "bg-primaryBlackColor",
       buttonShadow: "shadow-[0_2px_10px_rgba(0,0,0,0.3)]",
       expandIcon: true,
       features: [
-        { text: "Divide costs monthly." },
-        { text: "No interest fees." },
-        { text: "Equal payment terms." },
-        { text: "Adjustable plans." },
-        { text: "Access after first payment." },
-        { text: "Payment reminders." },
-        { text: "Secure online payments." },
+        { text: "Access for free" },
+        { text: "No Internship." },
+        { text: "7 weeks online." },
       ],
     },
     {
@@ -54,24 +50,24 @@ const PricingSection = () => {
       planThemeColor: "primaryRedColor",
       checkIconColor: "#ba0000ff",
       price: 500,
+      cycle: "",
       iconBgColor: "bg-[#f7e1e1ff]",
       textColor: "text-primaryRedColor",
       description:
-        "Pay your tuition upfront and enjoy exclusive discounts on your program.",
+        "Make a one-time payment and unlock the full benefits of your program.",
       buttonColor: "bg-primaryRedColor",
       expandIcon: true,
       features: [
-        { text: "One-time payment." },
-        { text: "Lifetime access to materials." },
-        { text: "Online or In-person." },
-        { text: "No additional fees." },
-        { text: "No Accommodation." },
-        { text: "Priority enrollment support." },
+        { text: "Guaranteed Internship." },
+        { text: "Unlimited projects." },
         { text: "Free program resources." },
-        { text: "No Excursions + Safari" },
-        { text: "Unlimited projects" },
+        { text: "Online or In-person." },
+        { text: "One-time payment." },
+        { text: "No Accommodation." },
+        { text: "No Excursions + Safari." },
       ],
     },
+
     {
       title: "Buy Now, Pay Later",
       planThemeColor: "primaryGreenColor",
@@ -84,16 +80,16 @@ const PricingSection = () => {
         "Start learning now and pay over time, with flexible repayment terms.",
       buttonColor: "bg-primaryGreenColor",
       expandIcon: true,
-      features: [
-        { text: "4 star Accommodation" },
-        { text: "Instant course access." },
-        { text: "In-Person Attendance." },
-        { text: "Excursions. + Safari " },
-        { text: "Easy repayment tracking." },
-        { text: "Automated reminders." },
-        { text: "Automated reminders." },
-        { text: "No upfront costs." },
-      ],
+      "features": [
+        { "text": "No upfront costs." },
+        { "text": "Guaranteed Internship." },
+        { "text": "Instant course access." },
+        { "text": "4-star Accommodation." },
+        { "text": "Excursions + Safari." },
+        { "text": "In-Person Attendance." },
+        { "text": "Easy repayment tracking." },
+        { "text": "Automated reminders." }
+      ]
     },
   ];
 
@@ -146,7 +142,7 @@ const PricingSection = () => {
                   plan.buttonShadow || ""
                 } flex items-center justify-center gap-2 mb-6 hover:bg-opacity-90`}
             >
-              Pay now
+              {plan.title === "Free" ? "Enroll Now" : "Pay Now"}
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
