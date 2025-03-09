@@ -12,7 +12,7 @@ const TeamCarousel = () => {
     {
       name: "Raydon Muregi",
       role: "CEO",
-      image: "/images/CEO-img.jpg",
+      image: "/images/CEO-img.webp",
     },
     {
       name: "Kendi Miriti",
