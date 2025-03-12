@@ -14,11 +14,13 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
-import SubscriptionModal from "./SubscriptionModal";
-
+import SubscriptionModal from "@/app/pages/components/SubscriptionModal";
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [showSubscribedPopup, setShowSubscribedPopup] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isError, setIsError] = useState(false);
   const currentYear = new Date().getFullYear();
   const footerLinks = {
     general: {
@@ -55,25 +57,34 @@ const Footer = () => {
 
   const subscribeHandler = async () => {
     const base_url = process.env.NEXT_PUBLIC_BASE_API_URL;
-    // e.preventDefault();
-
+    setIsLoading(true);
     try {
       if (email) {
-        // console.log("Email provided::", email)
         const response = await axios.post(`${base_url}/api/subscribe`, {
           email,
         });
-
         if (response.status === 200) {
-          setShowSubscribedPopup(true);
-          setEmail("");
+          setModalMessage(
+            "Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and updates🥳."
+          );
+          setIsError(false);
         }
       }
     } catch (error) {
-      console.log("Subscription error::", error);
-      alert("Please use a different email or try again later😥");
-      setEmail("");
+      if (axios.isAxiosError(error) && error.response?.status === 400) {
+        setModalMessage(
+          "This email has already been used. Please use a different email😥"
+        );
+      } else {
+        setModalMessage(
+          "An error occurred. Please try again later or check your internet connection😥."
+        );
+      }
+      setIsError(true);
     }
+    setIsLoading(false);
+    setShowSubscribedPopup(true);
+    setEmail("");
   };
 
   return (
@@ -82,6 +93,8 @@ const Footer = () => {
         <SubscriptionModal
           isOpen={showSubscribedPopup}
           onClose={() => setShowSubscribedPopup(false)}
+          message={modalMessage}
+          isError={isError}
         />
       )}
       {/* Main footer content */}
@@ -136,10 +149,11 @@ const Footer = () => {
                 className="w-full px-4 py-2 rounded-l bg-gray-800 text-white"
               />
               <button
-                className="bg-white text-black px-6 py-2 rounded-r font-semibold"
+                className="bg-white text-black px-6 py-2 rounded-r font-semibold flex items-center justify-center whitespace-nowrap h-auto"
                 onClick={subscribeHandler}
+                disabled={isLoading}
               >
-                Subscribe
+                {isLoading ? "Subscribing..." : "Subscribe"}
               </button>
             </div>
           </div>

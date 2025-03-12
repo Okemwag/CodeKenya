@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import axios from "axios";
+
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa6";
+
 import {
   FaYoutube,
   FaLinkedin,
@@ -10,7 +14,13 @@ import {
   FaGithub,
 } from "react-icons/fa6";
 
-const InternshipsFooter = () => {
+import SubscriptionModal from "@/app/pages/components/SubscriptionModal";
+const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSubscribedPopup, setShowSubscribedPopup] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isError, setIsError] = useState(false);
   const currentYear = new Date().getFullYear();
   const footerLinks = {
     general: {
@@ -45,46 +55,50 @@ const InternshipsFooter = () => {
 
   const legalLinks = [{ name: "Deposit policy", path: "/tuition" }];
 
+  const subscribeHandler = async () => {
+    const base_url = process.env.NEXT_PUBLIC_BASE_API_URL;
+    setIsLoading(true);
+    try {
+      if (email) {
+        const response = await axios.post(`${base_url}/api/subscribe`, {
+          email,
+        });
+        if (response.status === 200) {
+          setModalMessage(
+            "Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and updates🥳."
+          );
+          setIsError(false);
+        }
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.status === 400) {
+        setModalMessage(
+          "This email has already been used. Please use a different email😥"
+        );
+      } else {
+        setModalMessage(
+          "An error occurred. Please try again later or check your internet connection😥."
+        );
+      }
+      setIsError(true);
+    }
+    setIsLoading(false);
+    setShowSubscribedPopup(true);
+    setEmail("");
+  };
+
   return (
-    <footer className="bg-primaryBlackColor text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Call to action cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="bg-internship-footer-bg1 bg-center rounded-lg p-6 transform scale-x-[-1]">
-            <div className="transform scale-x-[-1] space-y-4">
-              <h3 className="text-black font-semibold text-xl md:text-2xl">
-                Become a Candidate
-              </h3>
-              <p className="text-slate-600 text-sm md:text-base w-full md:w-[60%]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                cursus a dolor convallis efficitur.
-              </p>
-              <div>
-                <Link href="/apply">
-                  <button className="flex items-center gap-2 bg-white hover:bg-primaryRedColor hover:text-white px-6 py-3 text-primaryRedColor transition-colors duration-300 rounded">
-                    Register Now <FaArrowRight className="ml-2" />
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-internship-footer-bg2 rounded-lg p-6">
-            <div className="space-y-4">
-              <h3 className="font-semibold text-xl md:text-2xl">
-                Become a Partner
-              </h3>
-              <p className="text-sm md:text-base w-full md:w-[60%]">
-                Cras in massa pellentesque, mollis ligula non, luctus dui. Morbi
-                sed efficitur dolor. Pelque augue risus, aliqu.
-              </p>
-              <button className="flex items-center gap-2 bg-white hover:bg-primaryGreenColor hover:text-white px-6 py-3 text-primaryGreenColor transition-colors duration-300 rounded">
-                Register Now <FaArrowRight className="ml-2" />
-              </button>
-            </div>
-          </div>
-        </div>
-
+    <footer className="bg-primaryBlackColor text-white px-8 py-12">
+      {showSubscribedPopup && (
+        <SubscriptionModal
+          isOpen={showSubscribedPopup}
+          onClose={() => setShowSubscribedPopup(false)}
+          message={modalMessage}
+          isError={isError}
+        />
+      )}
+      {/* Main footer content */}
+      <div className="w-full md:w-[90%] mx-auto">
         {/* Logo and navigation links */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Logo */}
@@ -128,11 +142,18 @@ const InternshipsFooter = () => {
             <div className="flex">
               <input
                 type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email Address"
                 className="w-full px-4 py-2 rounded-l bg-gray-800 text-white"
               />
-              <button className="bg-white text-black px-6 py-2 rounded-r font-semibold">
-                Subscribe
+              <button
+                className="bg-white text-black px-6 py-2 rounded-r font-semibold flex items-center justify-center whitespace-nowrap h-auto"
+                onClick={subscribeHandler}
+                disabled={isLoading}
+              >
+                {isLoading ? "Subscribing..." : "Subscribe"}
               </button>
             </div>
           </div>
@@ -180,4 +201,4 @@ const InternshipsFooter = () => {
   );
 };
 
-export default InternshipsFooter;
+export default Footer;
