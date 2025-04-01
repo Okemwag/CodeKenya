@@ -16,9 +16,7 @@ const Overview = () => {
             Apply early to enjoy exclusive benefits that give you a head start,
             including priority access and premium perks.
           </p>
-          <p className="font-semibold">
-            Regular 1 deadline: April 1st 2025.
-          </p>
+          <p className="font-semibold">Regular 2 deadline: May 1st 2025.</p>
           <div className="flex justify-center md:justify-start">
             <Link href="/tuition">
               <Button
