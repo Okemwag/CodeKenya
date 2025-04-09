@@ -61,8 +61,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-base"
           >
-            Code Kenya program combines a career-focused bootcamp with an
-            internship in a tech Field, aimed to help you gain experience in the
+            Code Kenya program combines a career-focused bootcamp with an integrated
+            internship, aimed to help you gain experience in the
             industry
           </motion.p>
 
