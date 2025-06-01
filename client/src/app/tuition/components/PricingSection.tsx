@@ -26,10 +26,10 @@ interface PricingPlan {
 const PricingSection = () => {
   const plans: PricingPlan[] = [
     {
-      title: "Free",
+      title: "Access Fee",
       planThemeColor: "primaryBlackColor",
       checkIconColor: "#000000ff",
-      price: 0,
+      price: 8,
       cycle: "",
       iconBgColor: "bg-[#e0e0e0ff]",
       textColor: "text-primaryBlackColor",
@@ -39,7 +39,7 @@ const PricingSection = () => {
       buttonShadow: "shadow-[0_2px_10px_rgba(0,0,0,0.3)]",
       expandIcon: true,
       features: [
-        { text: "Access for free" },
+        { text: "Access fee" },
         { text: "No Internship." },
         { text: "7 weeks online." },
       ],
