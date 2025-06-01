@@ -34,7 +34,7 @@ const PricingSection = () => {
       iconBgColor: "bg-[#e0e0e0ff]",
       textColor: "text-primaryBlackColor",
       description:
-        "Enjoy full access to the course at no cost, with a flexible learning schedule designed for your convenience.",
+        "Enjoy full access to the course with a flexible learning schedule designed for your convenience.",
       buttonColor: "bg-primaryBlackColor",
       buttonShadow: "shadow-[0_2px_10px_rgba(0,0,0,0.3)]",
       expandIcon: true,
@@ -80,16 +80,16 @@ const PricingSection = () => {
         "Start learning now and pay over time, with flexible repayment terms.",
       buttonColor: "bg-primaryGreenColor",
       expandIcon: true,
-      "features": [
-        { "text": "No upfront costs." },
-        { "text": "Guaranteed Internship." },
-        { "text": "Instant course access." },
-        { "text": "4-star Accommodation." },
-        { "text": "Excursions + Safari." },
-        { "text": "In-Person Attendance." },
-        { "text": "Easy repayment tracking." },
-        { "text": "Automated reminders." }
-      ]
+      features: [
+        { text: "No upfront costs." },
+        { text: "Guaranteed Internship." },
+        { text: "Instant course access." },
+        { text: "4-star Accommodation." },
+        { text: "Excursions + Safari." },
+        { text: "In-Person Attendance." },
+        { text: "Easy repayment tracking." },
+        { text: "Automated reminders." },
+      ],
     },
   ];
 
@@ -108,7 +108,7 @@ const PricingSection = () => {
                 </div>
               </div>
             )}
-            
+
             {/* Header */}
             <div className="flex justify-between flex-col items-start mb-4">
               <p
