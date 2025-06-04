@@ -1,8 +1,5 @@
 import React from "react";
 
-import { CheckIcon } from "lucide-react";
-import Link from "next/link";
-
 interface PricingFeature {
   text: string;
 }
@@ -21,169 +18,182 @@ interface PricingPlan {
   buttonColor: string;
   buttonShadow?: string;
   expandIcon?: boolean;
+  paymentLink?: string;
 }
 
-const PricingSection = () => {
-  const plans: PricingPlan[] = [
-    {
-      title: "Access Fee",
-      planThemeColor: "primaryBlackColor",
-      checkIconColor: "#000000ff",
-      price: 8,
-      cycle: "",
-      iconBgColor: "bg-[#e0e0e0ff]",
-      textColor: "text-primaryBlackColor",
-      description:
-        "Enjoy full access to the course with a flexible learning schedule designed for your convenience.",
-      buttonColor: "bg-primaryBlackColor",
-      buttonShadow: "shadow-[0_2px_10px_rgba(0,0,0,0.3)]",
-      expandIcon: true,
-      features: [
-        { text: "Access fee" },
-        { text: "No Internship." },
-        { text: "7 weeks online." },
-      ],
-    },
-    {
-      label: "Best value",
-      title: "Pay Once – Save More",
-      planThemeColor: "primaryRedColor",
-      checkIconColor: "#ba0000ff",
-      price: 500,
-      cycle: "",
-      iconBgColor: "bg-[#f7e1e1ff]",
-      textColor: "text-primaryRedColor",
-      description:
-        "Make a one-time payment and unlock the full benefits of your program.",
-      buttonColor: "bg-primaryRedColor",
-      expandIcon: true,
-      features: [
-        { text: "Guaranteed Internship." },
-        { text: "Unlimited projects." },
-        { text: "Free program resources." },
-        { text: "Online or In-person." },
-        { text: "One-time payment." },
-        { text: "No Accommodation." },
-        { text: "No Excursions + Safari." },
-      ],
-    },
+const plans: PricingPlan[] = [
+  {
+    title: "Access Fee",
+    planThemeColor: "primaryBlackColor",
+    checkIconColor: "#000000ff",
+    price: 8,
+    cycle: "",
+    iconBgColor: "bg-[#e0e0e0ff]",
+    textColor: "text-primaryBlackColor",
+    description:
+      "Enjoy full access to the course with a flexible learning schedule designed for your convenience.",
+    buttonColor: "bg-primaryBlackColor",
+    buttonShadow: "shadow-[0_2px_10px_rgba(0,0,0,0.3)]",
+    expandIcon: true,
+    paymentLink:
+      "https://payment.intasend.com/pay/08797697-634b-4158-9e97-bc3a60bf90e4/",
+    features: [
+      { text: "Access fee" },
+      { text: "No Internship." },
+      { text: "7 weeks online." },
+    ],
+  },
+  {
+    label: "Best value",
+    title: "Pay Once – Save More",
+    planThemeColor: "primaryRedColor",
+    checkIconColor: "#ba0000ff",
+    price: 500,
+    cycle: "",
+    iconBgColor: "bg-[#f7e1e1ff]",
+    textColor: "text-primaryRedColor",
+    description:
+      "Make a one-time payment and unlock the full benefits of your program.",
+    buttonColor: "bg-primaryRedColor",
+    expandIcon: true,
+    paymentLink:
+      "https://payment.intasend.com/pay/c40406fd-3b36-447d-a566-806cfb9aef60/",
+    features: [
+      { text: "Guaranteed Internship." },
+      { text: "Unlimited projects." },
+      { text: "Free program resources." },
+      { text: "Online or In-person." },
+      { text: "One-time payment." },
+      { text: "No Accommodation." },
+      { text: "No Excursions + Safari." },
+    ],
+  },
+  {
+    title: "Buy Now, Pay Later",
+    planThemeColor: "primaryGreenColor",
+    checkIconColor: "#006600ff",
+    price: 7000,
+    iconBgColor: "bg-[#e1ede1ff]",
+    textColor: "text-primaryGreenColor",
+    cycle: "",
+    description:
+      "Start learning now and pay over time, with flexible repayment terms.",
+    buttonColor: "bg-primaryGreenColor",
+    expandIcon: true,
+    paymentLink:
+      "https://payment.intasend.com/pay/08797697-634b-4158-9e97-bc3a60bf90e4/",
+    features: [
+      { text: "No upfront costs." },
+      { text: "Guaranteed Internship." },
+      { text: "Instant course access." },
+      { text: "4-star Accommodation." },
+      { text: "Excursions + Safari." },
+      { text: "In-Person Attendance." },
+      { text: "Easy repayment tracking." },
+      { text: "Automated reminders." },
+    ],
+  },
+];
 
-    {
-      title: "Buy Now, Pay Later",
-      planThemeColor: "primaryGreenColor",
-      checkIconColor: "#006600ff",
-      price: 7000,
-      iconBgColor: "bg-[#e1ede1ff]",
-      textColor: "text-primaryGreenColor",
-      cycle: "",
-      description:
-        "Start learning now and pay over time, with flexible repayment terms.",
-      buttonColor: "bg-primaryGreenColor",
-      expandIcon: true,
-      features: [
-        { text: "No upfront costs." },
-        { text: "Guaranteed Internship." },
-        { text: "Instant course access." },
-        { text: "4-star Accommodation." },
-        { text: "Excursions + Safari." },
-        { text: "In-Person Attendance." },
-        { text: "Easy repayment tracking." },
-        { text: "Automated reminders." },
-      ],
-    },
-  ];
-
+const PricingSection: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className="relative bg-white rounded-3xl p-6 border border-gray-100"
-          >
-            {plan.label && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <div className="bg-red-600 text-white text-sm px-4 py-1 rounded-full font-medium">
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-10">Our Plans</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, idx) => (
+            <div
+              key={idx}
+              className="border rounded-xl p-6 shadow-md flex flex-col justify-between"
+            >
+              {plan.label && (
+                <div className="mb-2 text-sm font-semibold text-red-600 uppercase">
                   {plan.label}
                 </div>
+              )}
+
+              <div>
+                <h3
+                  className={`text-xl font-bold mb-2 ${
+                    plan.textColor || "text-black"
+                  }`}
+                >
+                  {plan.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{plan.description}</p>
+                <div className="text-4xl font-bold mb-2">${plan.price}</div>
               </div>
-            )}
 
-            {/* Header */}
-            <div className="flex justify-between flex-col items-start mb-4">
-              <p
-                className={`${plan.iconBgColor || ""} ${
-                  plan.textColor || ""
-                }  w-fit py-1 px-2 my-2 text-xs rounded-md`}
-              >
-                {plan.title}
-              </p>
-              <div className="flex-grow">
-                <div className="flex items-baseline">
-                  <span className="text-2xl text-slate-400 font-medium">$</span>
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.cycle && (
-                    <span className="text-lg font-medium">/{plan.cycle}</span>
-                  )}
-                </div>
-              </div>
-            </div>
+              <ul className="mb-6 mt-4 space-y-2">
+                {plan.features.map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-700">
+                    <svg
+                      className="w-5 h-5 mr-2 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feature.text}
+                  </li>
+                ))}
+              </ul>
 
-            {/* Description */}
-            <p className="text-gray-600 text-sm mb-6">{plan.description}</p>
-
-            {/* Button */}
-            <button
-              className={`w-full ${
-                plan.buttonColor
-              } text-white rounded-full py-3 font-medium
-                ${
-                  plan.buttonShadow || ""
-                } flex items-center justify-center gap-2 mb-6 hover:bg-opacity-90`}
-            >
-              {plan.title === "Free" ? "Enroll Now" : "Pay Now"}
-              <svg
-                className="w-5 h-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
-
-            {/* Features */}
-            <ul className="space-y-3">
-              {plan.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-center gap-2">
-                  <div
-                    className={`rounded-full p-1  ${plan.iconBgColor || " "}`}
+              {plan.paymentLink ? (
+                <a
+                  href={plan.paymentLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full ${plan.buttonColor} text-white rounded-full py-3 font-medium
+                    ${plan.buttonShadow || ""} flex items-center justify-center gap-2 mb-2 hover:bg-opacity-90`}
+                >
+                  Pay Now
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
                   >
-                    <CheckIcon color={plan.checkIconColor || " "} size={10} />
-                  </div>
-
-                  <span className="text-gray-600 text-sm">{feature.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              ) : (
+                <button
+                  className={`w-full ${plan.buttonColor} text-white rounded-full py-3 font-medium
+                    ${plan.buttonShadow || ""} flex items-center justify-center gap-2 mb-2 hover:bg-opacity-90`}
+                >
+                  Enroll Now
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* Explore Programs Button */}
-      <div className="mt-12 text-center">
-        <Link href="/bootcamps">
-          <button className="bg-red-600 hover:bg-red-700 text-white font-medium px-8 py-3 rounded-full inline-flex items-center justify-center">
-            Explore Our Programs
-          </button>
-        </Link>
-      </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
-import string
 import secrets
+import string
+
 
 def generate_secure_password(length: int = 12) -> str:
     """

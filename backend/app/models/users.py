@@ -1,8 +1,13 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, Enum as SQLAlchemyEnum, ForeignKey, Date, Text
+from enum import Enum
+
+from sqlalchemy import Boolean, Column, Date, DateTime
+from sqlalchemy import Enum as SQLAlchemyEnum
+from sqlalchemy import ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from enum import Enum
+
 from ..db.database import Base
+
 
 class UserTypeEnum(str, Enum):
     Admin = "Admin"
