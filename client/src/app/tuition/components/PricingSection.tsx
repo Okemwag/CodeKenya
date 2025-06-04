@@ -81,7 +81,7 @@ const plans: PricingPlan[] = [
     buttonColor: "bg-primaryGreenColor",
     expandIcon: true,
     paymentLink:
-      "https://payment.intasend.com/pay/08797697-634b-4158-9e97-bc3a60bf90e4/",
+      "https://payment.intasend.com/pay/c40406fd-3b36-447d-a566-806cfb9aef60/",
     features: [
       { text: "No upfront costs." },
       { text: "Guaranteed Internship." },
