@@ -16,7 +16,7 @@ const Overview = () => {
             Apply early to enjoy exclusive benefits that give you a head start,
             including priority access and premium perks.
           </p>
-          <p className="font-semibold">Regular 1 deadline: June 15th 2025.</p>
+          <p className="font-semibold">Regular 2 deadline: June 30th 2025.</p>
           <div className="flex justify-center md:justify-start">
             <Link href="/tuition">
               <Button
@@ -34,7 +34,7 @@ const Overview = () => {
           <h2 className="font-bold text-xl">Nairobi Kenya</h2>
           <p className="text-sm">Applications are now open</p>
           <p className="text-xs">Starts from</p>
-          <p>June 23rd to August 1st</p>
+          <p>July 2nd to August 15th</p>
           <Link href="/bootcamps">
             <Button type="button" title="Learn more" variant="btn_green_rect" />
           </Link>
